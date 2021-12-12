@@ -1,0 +1,59 @@
+
+  .signup {
+    display: flex;
+    flex-direction: column;
+    border:  1px solid rgba(0, 0, 0, 0.075);
+      padding: 2%;
+      height: 70%;
+      /* background-image: url("https://i.pinimg.com/236x/ba/19/91/ba19913a2583e2c0694f8953bf8b88d6.jpg");
+    grid-area: auto;   */
+  
+      
+  }
+  #maindeev{
+    display: flex;
+    flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  /* background-image: url("https://i.pinimg.com/236x/f8/87/4d/f8874d49df784c5bf8e5a2e8478abd7b.jpg"); */
+  background-repeat: no-repeat;
+  background-size: cover;
+    border: rgba(172, 74, 89, 0.89);
+     box-sizing: border-box; 
+     text-align: center;   
+     margin: auto;
+      width: 450px;
+      height: 500px;
+      margin-top: 100px;
+      margin-right: 400px;
+      border-radius: 15px;
+
+     
+   }
+   
+ 
+  #inputup{
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 20px auto;
+    
+  }
+  #input11{
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 20px auto;
+  }
+  #input12{
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 20px auto;
+  }
+  #btn2{
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 20px auto; 
+  }

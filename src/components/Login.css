@@ -1,0 +1,54 @@
+
+#maindev {
+    display: flex;
+    flex-direction: column;
+  text-align: center;
+  justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: rgba(172, 74, 89, 0.89);
+     box-sizing: border-box; 
+     text-align: center;   
+     margin: auto;
+      width: 450px;
+      height: 500px;
+      margin-top: 100px;
+      margin-right: 400px;
+      border-radius: 15px;
+  }
+  .signup {
+    display: flex;
+    flex-direction: column;
+    border:  1px solid rgba(0, 0, 0, 0.075);
+      padding: 2%;
+      height: 70%;
+  
+      
+  }
+  #input{
+      width: 200px;
+      height: 40px;
+      border-radius: 5px;
+      margin: 40px auto;
+  /* border: rgba(68, 35, 68, 0.281); */
+  }
+  #input1{
+      width: 200px;
+      height: 40px;
+      border-radius: 5px;
+      margin: 40px auto;   
+  }
+  #btn{
+      width: 100px;
+      height: 40px;
+      border-radius: 5px;
+      margin: 40px auto;   
+      background-color: rgba(210, 180, 140, 0.445);
+      font-weight: bold;
+     color: black;
+  }
+
+   #btn:hover{
+    background-color: rgba(210, 180, 140, 0.733); 
+
+  }
