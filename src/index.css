@@ -1,0 +1,11 @@
+body{
+    background-color: rgb(224, 224, 224) !important;
+    color: black !important;   
+}
+.mainBackgroung{
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 16px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}

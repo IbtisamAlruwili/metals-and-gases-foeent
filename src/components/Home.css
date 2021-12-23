@@ -1,0 +1,12 @@
+.maincontent{
+    position: relative;
+}
+.maincontent h1{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-60%,-80%);
+    font-size: 50px ;
+    font-weight: 600;
+
+}

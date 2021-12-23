@@ -1,0 +1,39 @@
+.nav-container{
+    background-color: rgb(0, 0, 0);
+    height: 60px ;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 18px ;
+    font-weight: 600;
+}
+.nav-container span{
+    margin-left: 40px;
+    font-size: 30px ;
+    letter-spacing: 5px;
+    
+}
+.nav-container ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+}
+.nav-container ul li{
+    margin-top: 10px;
+    letter-spacing: 2px; 
+    padding: 3px 10px;
+    border-radius: 15px;
+
+}
+.nav-container ul li:hover{
+    border-left: 1px #fff solid !important;   
+    border-right: 1px #fff solid !important;    
+ 
+    transition:all .3s ease-in-out ;
+}
+
+

@@ -1,8 +1,0 @@
-#fav{
-
-    width: 80px;
-    height: 100px;
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr;  
-
-}
