@@ -9,12 +9,13 @@ export default function Login(props) {
 
       <div className="form">
         <h2> Login</h2>
+        {props.invalidlogin ? <p style={{ color: "red" }}>Invalid email or password, try again! </p> : ''}
         <div className="input">
           <div className="inputBox">
             <label >Email</label>
             <input type="email"
               id="input"
-              onChange={(e) => {props.changeEmail(e)}}
+              onChange={(e) => { props.changeEmail(e) }}
               placeholder="enter your email"
               required
             />

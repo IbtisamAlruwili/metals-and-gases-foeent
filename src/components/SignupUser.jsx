@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router';
-
+// import './Signup.css';
 
 export default function SignupUser() {
   const [name, setName] = useState("");
@@ -10,14 +10,15 @@ export default function SignupUser() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const [invalidSignup, setInvalidSignup] = useState(false);
+
   
 
 
   const changeName = (e) => {
-   setName(e.target.value);  // القيمه المدخله في ال input
+    setName(e.target.value);
   };
   const changeEmail = (e) => {
-    setEmail(e.target.value);
+    setEmail(e.target.value);// القيمه المدخله في ال input
   };
   const changePassword = (e) => {
     setPassword(e.target.value);
@@ -25,18 +26,19 @@ export default function SignupUser() {
 
   let addUser = async () => {
     try {
-      const response = await axios.post("https://metalapi.herokuapp.com/userSignUp",{ // اذا جبت الداتا لازم هذي تتنفذ قبل العمبليات اللي بعدها لانها بتكون معتمده عليها 
-        name: name,
+      const response = await axios.post("https://metalapi.herokuapp.com/userSignUp", {// اذا جبت الداتا لازم هذي تتنفذ قبل العمبليات اللي بعدها لانها بتكون معتمده عليها 
+        name: name,// اليمين  القيمه واليسار var
         email: email,
-        password: password  // اليمين  القيمه واليسار var
+        password: password
       });
-      console.log(response)
-      if (response.data) { // اذا كانت هناك data في ال response معناه اني  ال response صحيح  
-        navigate("/login")// التنقل من صفحه الي صفحه
+      if (response.data) {// اذا كانت هناك data في ال response معناه اني  ال response صحيح  
+      
+        // if (response.data.Like) {// اذا كانت هناك data في ال response معناه اني  ال response صحيح  
+         navigate("/login")// التنقل من صفحه الي صفحه
       }
     }
     catch (error) {
-      setInvalidSignup(true) // اذا كانت البيانات خاطئه يحول ال useState Invalidsignup الي true وبالتالي يظهر ال الايرور 
+      setInvalidSignup(true)// اذا كانت البيانات خاطئه يحول ال useState Invalidsignup الي true وبالتالي يظهر ال الايرور 
     }
   };
 
@@ -47,13 +49,14 @@ export default function SignupUser() {
 
       <div className="form">
         <h2>User Sign up</h2>
-        {/* السطر 51 يظهر ال جمله التي بداخلعه عندما يكون invalidsignup ب true  */}
+                {/* السطر 51 يظهر ال جمله التي بداخلعه عندما يكون invalidsignup ب true  */}
+
         {invalidSignup? <p style={{color :"red"}}>Invalid email or password, try again! </p> :'' }
 
         <div className="input">
           <div className="inputBox">
             <label >Username</label>
-            <input type="text"
+            <input type="email"
               required
               id="input"
               onChange={(e) => {
@@ -85,7 +88,7 @@ export default function SignupUser() {
             />
           </div>
           <div className="inputBox">
-            <input type="submit" 
+            <input type="submit" defaultValue="Sign In"
               onClick={addUser}
             />
           </div>
@@ -93,9 +96,9 @@ export default function SignupUser() {
         <p className="forgot">go to log in now <NavLink to={'/login'}>click here</NavLink> </p>
       </div>
     </div>
+
+
+
+
   )
 }
-
-
-
-

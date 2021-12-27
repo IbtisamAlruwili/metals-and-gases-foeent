@@ -1,19 +1,48 @@
 import React from 'react'
-import Footer from './Footer'
-import Navbar from './Navbar'
-import homeImage from "./../Components/images/istockphoto-155418648-612x612.jpg"
+import { NavLink } from 'react-router-dom'
+import welcomeImage from "./../Components/images/kT1yJX5.jpg"
 import "./Home.css"
 
 export default function Home() {
     return (
         <>
-            <Navbar />
-            
-        <div className='vh-100 w-100 bg-black maincontent'>
-            <img style={{width:"100%" ,height:"100%"}} className='HomePhoto' src={homeImage} alt="not found" />
-            <h1> Welcome to our metal and gases website </h1>
+    
+
+
+           <div className="welcomeBackground">
+        {/* // navbar  */}
+           <div className='nav-container welcome-nav  py-4' >
+                <div  className='shadow-lg p-1 border border-2 rounded-circle border-danger mt-2'>
+                    <img width="50px" height="50px" src={welcomeImage} alt="" />
+                </div>
+            <ul>
+                <li>
+                    <NavLink className="nav-link link-light fs-4" to="/products">Exploration</NavLink>
+                </li>
+                <li>
+                    <NavLink className="nav-link link-light fs-4" to="/gases">Gases</NavLink>
+                </li>
+                <li>
+                    <NavLink className="nav-link link-light fs-4" to="/metal">Metal</NavLink>
+                </li>
+                <li>
+                    <NavLink className="nav-link link-light fs-4" to="/signupuser">Signin/Up</NavLink>
+                </li>
+            </ul>
         </div>
-        <Footer/>
-     </>
+        {/* end navbar */}
+                <div className="welcomeTitle text-light col-md-5">
+                    <h1>Welcome to our website</h1>
+                    <p className='ms-5'>, as part of its strategy to enhance the international footprint of its natural gas business</p>
+                    <h1> About website</h1>
+                    <p className='ms-5'>This site displays the finest types of gases and minerals in the Kingdom of Saudi Arabia</p>
+                </div>
+                <div className="welcomeButtons text-light flex-wrap ">
+                <NavLink className="w-75" to="/gases"><button className='btn bg-info fs-2 fw-bold border-0  my-4'>Start Now </button></NavLink>
+                <NavLink className="w-75" to="/gases"><button className='btn bg-danger fs-2 fw-bold border-0  my-4'>Contact Us </button></NavLink>
+                </div>
+
+            </div> 
+        </>
     )
 }

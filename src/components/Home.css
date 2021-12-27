@@ -1,12 +1,27 @@
-.maincontent{
-    position: relative;
+.welcomeBackground{
+    width: 100%;
+    height: 100vh;
+    background-image: url(./../Components/images/pexels-pixabay-327041.jpg);
+    background-size: 100% 100%;
 }
-.maincontent h1{
+.welcomeTitle{
     position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-60%,-80%);
-    font-size: 50px ;
-    font-weight: 600;
-
+    top: 25%;
+    left: 5%;
+}
+.welcomeButtons{
+    position: absolute;
+    top: 40%;
+    right: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcomeTitle h1{
+    font-size: 65px ;
+    font-weight: 700;
+text-shadow: 3px 3px 15px red ;
+}
+.welcome-nav{
+    background-color: rgba(0, 0, 0, 0.5) !important;
 }
