@@ -18,27 +18,25 @@ export default function SignupUser() {
     setName(e.target.value);
   };
   const changeEmail = (e) => {
-    setEmail(e.target.value);// القيمه المدخله في ال input
+    setEmail(e.target.value);
   };
   const changePassword = (e) => {
     setPassword(e.target.value);
   };
 
-  let addUser = async () => {
+  const addUser = async () => {
     try {
-      const response = await axios.post("https://metalapi.herokuapp.com/userSignUp", {// اذا جبت الداتا لازم هذي تتنفذ قبل العمبليات اللي بعدها لانها بتكون معتمده عليها 
-        name: name,// اليمين  القيمه واليسار var
+      const response = await axios.post("https://metalapi.herokuapp.com/userSignUp", {
+        name: name,
         email: email,
         password: password
       });
-      if (response.data) {// اذا كانت هناك data في ال response معناه اني  ال response صحيح  
-      
-        // if (response.data.Like) {// اذا كانت هناك data في ال response معناه اني  ال response صحيح  
-         navigate("/login")// التنقل من صفحه الي صفحه
+      if (response.data) { // for test
+        navigate("/login")
       }
     }
     catch (error) {
-      setInvalidSignup(true)// اذا كانت البيانات خاطئه يحول ال useState Invalidsignup الي true وبالتالي يظهر ال الايرور 
+      setInvalidSignup(true)
     }
   };
 
@@ -49,8 +47,6 @@ export default function SignupUser() {
 
       <div className="form">
         <h2>User Sign up</h2>
-                {/* السطر 51 يظهر ال جمله التي بداخلعه عندما يكون invalidsignup ب true  */}
-
         {invalidSignup? <p style={{color :"red"}}>Invalid email or password, try again! </p> :'' }
 
         <div className="input">

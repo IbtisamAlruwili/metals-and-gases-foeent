@@ -2,75 +2,61 @@ import React, { useEffect, useState } from 'react'
 import { Routes, Route, Navigate } from 'react-router';
 import "./App.css";
 import "./index.css";
-import axios from "axios";
 import Login from './Components/Login';
 import Products from './Components/Products';
 import SignupUser from './Components/SignupUser';
 import Gases from './Components/Gases';
 import Metal from './Components/Metal';
-import { useNavigate } from "react-router-dom";
 import Home from './Components/Home';
 
 
 
-export default function App() {
+export default function App(token) {
 
-  const [invalidlogin, setInvalidLogin] = useState(false);
-  const [user, setuser] = useState({ email: "", password: "" })
-  const [token, settoken] = useState("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWI5OWJlMWE4ZGRlZmUzODI4MDFjZTUiLCJ1c2VyTmFtZSI6ImhoIiwiaWF0IjoxNjM5NTU3MTU0fQ.E5JB20uiJmvaRzy01dq-gyGqSAS5mGJmj31eDvCQfj4")
-  const navigate = useNavigate();
+  // const [user, setuser] = useState({ email: "", password: "" })
+  const [token, settoken] = useState("")
+  // const navigate = useNavigate();
   const [isAdmin, setAdmin] = useState(false);
 
-  const changeEmail = (e) => {
-    let myUser = { ...user }
-    myUser.email = e.target.value;
-    setuser(myUser);
-  };
+  // const changeEmail = (e) => {
+  //   let myUser = { ...user }
+  //   myUser.email = e.target.value;
+  //   setuser(myUser);
+  // };
 
-  const changePassword = (e) => {
-    let myUser = { ...user }
-    myUser.password = e.target.value;
-    setuser(myUser);
-  };
-        
+  // const changePassword = (e) => {
+  //   let myUser = { ...user }
+  //   myUser.password = e.target.value;
+  //   setuser(myUser);
+  // };
 
-  let goLogin = async () => {
-   if (user.email=="Admin@gmail.com" && user.password=="00000") {
+  const goLogin = async () => {
+    //
+    if (user.email == "Admin@gmail.com" ) {
+  //  يجيب به الداتا هذا لازم ان لو مافيه توكين يرجع لما اعمل تسجيل دخول ياخذ التوكين هذا اللي هو الديفولت عشان 
+    settoken(token)
     setAdmin(true); // علشان يظهر زر ال delete و زر ال add في صفحه ال metal
-    navigate('/products')
+    navigate('/home')
     return;
    }
    
-
-
-
-
-
-
-
-   
     let response = await axios.post('https://metalapi.herokuapp.com/login ', user);
     try {
+      // انا عندي يوز ستيت  اسمها توكين فوق وابي اخزن التوكين اللي راجع من الريسبونس في ال يوزستيت اللي اسمها توكين
       getToken(response.data.token);
-      if (response.data.priviledges.length === 5) {
-        setAdmin(true);
-        navigate('/products')
-      }
-      else{
+
         setAdmin(false);
-        navigate('/products')
-      }
+        navigate('/home')
       
     }
     catch (error) {
-      setInvalidLogin(true);
+      console.log("error")
     }
   };
 
-  function getToken(token) {
+  const getToken=(token) =>{
     settoken(token);
   }
-
 
   return (
     <div >
@@ -79,8 +65,8 @@ export default function App() {
         <Route path='/home' element={<Home/>} />
         <Route path='/products' element={<Products isAdmin={isAdmin} token={token} />} />
         <Route path='/gases' element={<Gases token={token} />} />
-        <Route path='/metal' element={<Metal isAdmin={isAdmin} token={token} />} />
-        <Route path='/login' element={<Login goLogin={goLogin} changePassword={changePassword} changeEmail={changeEmail} invalidlogin={invalidlogin} />} />
+        <Route path='/metal' element={<Metal isAdmin={isAdmin,setAdmin} token={token,settoken} />} />
+        <Route path='/login' element={<Login isAdmin={isAdmin} />} />
         <Route path='/signupuser' element={<SignupUser />} />
       </Routes>
     </div>
