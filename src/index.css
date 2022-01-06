@@ -1,9 +1,9 @@
 body{
-    background-color: rgb(224, 224, 224) !important;
+    background-color: rgba(224, 224, 224, 0.404) !important;
     color: black !important;   
 }
 .mainBackgroung{
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.151);
     border-radius: 10px;
     margin-right: 16px;
     padding-top: 40px;

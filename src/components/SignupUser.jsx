@@ -31,7 +31,7 @@ export default function SignupUser() {
         email: email,
         password: password
       });
-      if (response.data) { // for test
+      if (response.data.Like) {
         navigate("/login")
       }
     }
