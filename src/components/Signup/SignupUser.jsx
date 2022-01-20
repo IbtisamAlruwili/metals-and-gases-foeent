@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router';
@@ -24,9 +24,13 @@ export default function SignupUser() {
     setPassword(e.target.value);
   };
 
+  useEffect(() => {
+    console.log({ name, email, password });
+  }, [name, email, password]);
+
   const addUser = async () => {
     try {
-      const response = await axios.post("https://metalapi.herokuapp.com/userSignUp", {
+      const response = await axios.post("https://metal-gases-api.herokuapp.com/userSignUp", {
         name: name,
         email: email,
         password: password

@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+.breadcrump {
+  background-image: url(./Components/images/breadcrumbs.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 3rem 0;
+  text-align: center;
+}
+.breadcrump h1 {
+  color: #fff;
+}
+.inputSearch {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.inputSearch .inputGroup {
+  width: 40%;
+  position: relative;
+}
+.inputSearch .inputGroup button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  color: #dc3545;
+  font-size: 1.3rem;
+}
+.inputSearch input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.25rem 0 0 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.inputSearch button {
+  padding: 0.75rem;
+  border: none;
+  background: #f9a34f;
+}
+.main-color {
+  color: #f9a34f;
+}
+.sc-color {
+  color: #777;
+}
+
+.item-img {
+  height: 200px;
+  position: relative;
+}
+.item-img img {
+  max-width: 100%;
+  height: 200px;
+}
+.item-img button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99;
+}
+.item-info {
+  background: #1b232a;
+  padding: 40px;
+}
+.item-info h2,
+.item-info p {
+  color: #fff;
+  text-transform: capitalize;
+}
+.cartBtn {
+  background: none;
+  border: 1px solid #f9a34f;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.6em;
+  line-height: 1;
+  padding: 23px 26px;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+.addBtn {
+  background: none;
+  border: 1px solid #0dcaf0;
+  color: #0dcaf0;
+  display: block;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.6em;
+  line-height: 1;
+  padding: 23px 26px;
+  text-transform: uppercase;
+  margin: 0 auto;
+}

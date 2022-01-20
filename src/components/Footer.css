@@ -1,9 +1,0 @@
-.Foot{
-    height: 150px ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px ;
-    background-color: rgb(39, 34, 34);
-    color: #fff;
-}
